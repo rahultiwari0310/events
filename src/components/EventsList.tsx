@@ -51,6 +51,10 @@ export const EventsList = ({ list, isSelected, toggleSelection }: EventsListProp
         return categoryMap;
     }, [list]);
 
+    if(!list.length) {
+        return <div>No events found.</div>
+    }
+
     return <AllEvents>
         {
             Object.entries(groupedByCategory).map(([category, events]) => <EventsContainer key={category}>

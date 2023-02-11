@@ -1,7 +1,7 @@
 import { SportingEvent } from "../hooks/useFetchEvents";
 import styled from "styled-components";
 import dayjs from 'dayjs'
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
 
@@ -66,9 +66,9 @@ export const EventItem = ({ event, isSelected, toggleSelection }: EventItemProps
 
     const { maxEventsSelected, overlappingEventName } = event;
 
-    const disableReason = overlappingEventName ? `You have already opted-in for ${overlappingEventName} event for same time slot. 
+    const disableReason = useMemo(() => overlappingEventName ? `You have already opted-in for ${overlappingEventName} event for same time slot. 
     In order to select this event, you will have to opt-out of ${overlappingEventName}.` :
-        (maxEventsSelected ? 'Maximum 3 events can be seleted at a time.' : null)
+        (maxEventsSelected ? 'Maximum 3 events can be seleted at a time.' : null), [overlappingEventName, maxEventsSelected])
 
     const anchorId = `event-${event.id}`;
 
