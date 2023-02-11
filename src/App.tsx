@@ -2,10 +2,11 @@ import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import './App.css';
 import { EventsList } from './components/EventsList';
 import { Section } from './components/Section';
-import { SportingEvent, useFetchEvents } from './hooks/useFetchEvents';
+import { useFetchEvents } from './hooks/useFetchEvents';
 import styled from 'styled-components';
 import { SearchIcon } from './components/SearchIcon';
 import { ContentLoader } from './components/ContentLoader';
+import { useFilteredEvents } from './hooks/useFilteredEvents';
 
 const SectionTitle = styled.h2`
   margin: 0;
@@ -34,26 +35,12 @@ const StyledContainer = styled.div`
 
 function App() {
   const { eventsState } = useFetchEvents();
-  
-  const { data: eventsList, isLoading, error } = eventsState;
+
+  const { data: eventsList } = eventsState;
   const [searchInput, setSearchInput] = useState('');
   const [selectedEventsById, setSelectedEventsById] = useState<number[]>([]);
 
-  const { selectedEventsList, unselectedEventsList } = useMemo(() => {
-    const selected: SportingEvent[] = [];
-    const unselected: SportingEvent[] = [];
-    eventsList.forEach(event => {
-      if (selectedEventsById.includes(event.id)) {
-        selected.push(event);
-      } else if (event.event_name.toLowerCase().includes(searchInput.toLowerCase())) {
-        unselected.push(event);
-      }
-    })
-    return {
-      selectedEventsList: selected,
-      unselectedEventsList: unselected,
-    }
-  }, [eventsList, selectedEventsById, searchInput])
+  const { selectedEventsList, unselectedEventsList } = useFilteredEvents(eventsList, selectedEventsById, searchInput);
 
   const toggleSelection = useCallback((eventId: number) => {
     if (selectedEventsById.includes(eventId)) {
@@ -61,13 +48,11 @@ function App() {
     } else {
       setSelectedEventsById([...selectedEventsById, eventId]);
     }
-  }, [selectedEventsById, setSelectedEventsById])
+  }, [selectedEventsById, setSelectedEventsById]);
 
   const handleSearchInputChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   }, [setSearchInput]);
-
-
 
   return (
     <div className="App">
@@ -93,7 +78,6 @@ function App() {
           </Section>
         </StyledContainer>
       </ContentLoader>
-
     </div>
   );
 }

@@ -6,7 +6,8 @@ export type SportingEvent = {
   event_category: string;
   start_time: string;
   end_time: string;
-  disableSelection?: boolean;
+  maxEventsSelected?: boolean;
+  overlappingEventName?: string | null;
 };
 
 export type EventsFetchState = {

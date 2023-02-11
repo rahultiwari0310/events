@@ -7,7 +7,7 @@ export const ContentLoader = ({ isLoading, error, children }: { isLoading?: bool
         return <Spinner />
     }
     if (error) {
-        return <div className="error">{error}</div>
+        return <div className="error">Falied to fetch events: {error}</div>
     }
     return children;
 };
