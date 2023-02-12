@@ -38,6 +38,8 @@ export type EventsListProps = {
 };
 
 export const EventsList = ({ list, isSelected, toggleSelection }: EventsListProps) => {
+
+    // group events by category
     const groupedByCategory = useMemo(() => {
         const categoryMap: Record<string, SportingEvent[]> = {};
         list.forEach((event) => {

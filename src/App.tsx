@@ -42,6 +42,7 @@ function App() {
 
   const { selectedEventsList, unselectedEventsList } = useFilteredEvents(eventsList, selectedEventsById, searchInput);
 
+  // Select or remove event
   const toggleSelection = useCallback((eventId: number) => {
     if (selectedEventsById.includes(eventId)) {
       setSelectedEventsById(selectedEventsById.filter(it => it !== eventId));

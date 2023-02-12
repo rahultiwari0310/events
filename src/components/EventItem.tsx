@@ -38,10 +38,12 @@ const StyledEventName = styled.p`
     font-weight: bold;
     margin: 0;
 `;
+
 type StyledButtonProps = {
     isSelected?: boolean;
     isDisabled?: boolean;
 };
+
 const StyledButton = styled.button<StyledButtonProps>`
     background-color: ${props => props.isSelected ? '#ff3333' : (props.isDisabled ? '#999999' : '#009933')};
     padding: 8px 72px;
@@ -66,6 +68,7 @@ export const EventItem = ({ event, isSelected, toggleSelection }: EventItemProps
 
     const { maxEventsSelected, overlappingEventName } = event;
 
+    // Create disable reason text either for 3 events already selected or coincides with another selected event.
     const disableReason = useMemo(() => overlappingEventName ? `You have already opted-in for ${overlappingEventName} event for same time slot. 
     In order to select this event, you will have to opt-out of ${overlappingEventName}.` :
         (maxEventsSelected ? 'Maximum 3 events can be seleted at a time.' : null), [overlappingEventName, maxEventsSelected])
