@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1676191918498" clover="3.2.0">
+  <project timestamp="1676191918498" name="All files">
+    <metrics statements="106" coveredstatements="81" conditionals="46" coveredconditionals="38" methods="33" coveredmethods="22" elements="185" coveredelements="141" complexity="0" loc="106" ncloc="106" packages="5" files="13" classes="13"/>
+    <package name="src">
+      <metrics statements="28" coveredstatements="15" conditionals="6" coveredconditionals="1" methods="6" coveredmethods="2"/>
+      <file name="App.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/App.tsx">
+        <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="9" type="stmt"/>
+        <line num="39" count="9" type="stmt"/>
+        <line num="40" count="9" type="stmt"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="43" count="9" type="stmt"/>
+        <line num="46" count="9" type="stmt"/>
+        <line num="47" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="54" count="9" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="9" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/index.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="reportWebVitals.ts" path="/Users/rahultiwari/Desktop/events-selector/src/reportWebVitals.ts">
+        <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="46" coveredstatements="44" conditionals="26" coveredconditionals="24" methods="15" coveredmethods="14"/>
+      <file name="ContentLoader.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/ContentLoader.tsx">
+        <metrics statements="6" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+      </file>
+      <file name="EventItem.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/EventItem.tsx">
+        <metrics statements="15" coveredstatements="15" conditionals="18" coveredconditionals="18" methods="6" coveredmethods="6"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="112" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="48" count="112" type="cond" truecount="4" falsecount="0"/>
+        <line num="55" count="112" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="69" count="112" type="stmt"/>
+        <line num="72" count="112" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="112" type="stmt"/>
+        <line num="78" count="112" type="stmt"/>
+        <line num="79" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="82" count="112" type="stmt"/>
+      </file>
+      <file name="EventsList.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/EventsList.tsx">
+        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="20" type="stmt"/>
+        <line num="44" count="20" type="stmt"/>
+        <line num="45" count="20" type="stmt"/>
+        <line num="46" count="110" type="stmt"/>
+        <line num="47" count="110" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="71" type="stmt"/>
+        <line num="50" count="39" type="stmt"/>
+        <line num="53" count="20" type="stmt"/>
+        <line num="56" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="60" count="16" type="stmt"/>
+        <line num="62" count="39" type="stmt"/>
+        <line num="66" count="110" type="stmt"/>
+      </file>
+      <file name="SearchIcon.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/SearchIcon.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="9" type="stmt"/>
+      </file>
+      <file name="Section.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/Section.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="18" type="stmt"/>
+      </file>
+      <file name="Spinner.tsx" path="/Users/rahultiwari/Desktop/events-selector/src/components/Spinner.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.hooks">
+      <metrics statements="23" coveredstatements="13" conditionals="6" coveredconditionals="5" methods="11" coveredmethods="5"/>
+      <file name="useFetchEvents.ts" path="/Users/rahultiwari/Desktop/events-selector/src/hooks/useFetchEvents.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+      </file>
+      <file name="useFilteredEvents.ts" path="/Users/rahultiwari/Desktop/events-selector/src/hooks/useFilteredEvents.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="22" count="90" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="25" count="82" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="82" type="stmt"/>
+        <line num="36" count="9" type="stmt"/>
+        <line num="41" count="82" type="stmt"/>
+        <line num="42" count="58" type="stmt"/>
+        <line num="45" count="82" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.stubs">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="events.ts" path="/Users/rahultiwari/Desktop/events-selector/src/stubs/events.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+      <file name="checkTimeOverlap.ts" path="/Users/rahultiwari/Desktop/events-selector/src/utils/checkTimeOverlap.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="63" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="22" count="58" type="stmt"/>
+        <line num="23" count="58" type="stmt"/>
+        <line num="24" count="58" type="stmt"/>
+        <line num="25" count="58" type="stmt"/>
+        <line num="27" count="58" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
