@@ -79,7 +79,7 @@ export const EventItem = ({ event, isSelected, toggleSelection }: EventItemProps
         !disableReason && toggleSelection(event.id);
     }, [toggleSelection, event.id])
 
-    return <EventItemContainer disabled={Boolean(disableReason)}>
+    return <EventItemContainer data-testid={anchorId} disabled={Boolean(disableReason)}>
         <EventCategoryDenoter>{event.event_category.charAt(0)}</EventCategoryDenoter>
         <EventsDetails>
             <StyledEventName>{event.event_name}</StyledEventName>

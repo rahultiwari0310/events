@@ -59,7 +59,7 @@ export const EventsList = ({ list, isSelected, toggleSelection }: EventsListProp
 
     return <AllEvents>
         {
-            Object.entries(groupedByCategory).map(([category, events]) => <EventsContainer key={category}>
+            Object.entries(groupedByCategory).map(([category, events]) => <EventsContainer data-testid={`category-${category}`} key={category}>
                 <EventsCategoryTitle>{category}</EventsCategoryTitle>
                 <EventsListByCategory>
                     {
