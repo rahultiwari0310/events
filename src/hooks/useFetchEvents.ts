@@ -8,6 +8,7 @@ export type SportingEvent = {
   end_time: string;
   maxEventsSelected?: boolean;
   overlappingEventName?: string | null;
+  eventFromSameCategory?: boolean;
 };
 
 export type EventsFetchState = {

@@ -42,9 +42,12 @@ export const useFilteredEvents = (
           checkTimeOverlaps(event, selectedEvent)
         );
 
+        const eventFromSameCategory = selected.find((selectedEvent) => selectedEvent.event_category === event.event_category);
+
         return {
           ...event,
           overlappingEventName: overlappingEvent?.event_name ?? null,
+          eventFromSameCategory: Boolean(eventFromSameCategory)
         };
       }),
     };

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import type { SportingEvent } from "../hooks/useFetchEvents";
-import { EventItem, ToggleSelectionHandler } from "./EventItem";
+import { EventItemMemoized, ToggleSelectionHandler } from "./EventItem";
 import styled from 'styled-components';
 
 const AllEvents = styled.div`
@@ -63,7 +63,7 @@ export const EventsList = ({ list, isSelected, toggleSelection }: EventsListProp
                 <EventsCategoryTitle>{category}</EventsCategoryTitle>
                 <EventsListByCategory>
                     {
-                        events.map((event) => <EventItem isSelected={isSelected} key={event.id} toggleSelection={toggleSelection} event={event} />)
+                        events.map((event) => <EventItemMemoized isSelected={isSelected} key={event.id} toggleSelection={toggleSelection} event={event} />)
                     }
                 </EventsListByCategory>
             </EventsContainer>)

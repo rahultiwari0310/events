@@ -1,7 +1,7 @@
 import { SportingEvent } from "../hooks/useFetchEvents";
 import styled from "styled-components";
 import dayjs from 'dayjs'
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, memo } from "react";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
 
@@ -65,13 +65,23 @@ export type EventItemProps = {
 
 export const EventItem = ({ event, isSelected, toggleSelection }: EventItemProps) => {
 
+    console.log('Rahul:', event.event_name);
 
-    const { maxEventsSelected, overlappingEventName } = event;
+    const { maxEventsSelected, overlappingEventName, eventFromSameCategory } = event;
 
     // Create disable reason text either for 3 events already selected or coincides with another selected event.
-    const disableReason = useMemo(() => overlappingEventName ? `You have already opted-in for ${overlappingEventName} event for same time slot. 
-    In order to select this event, you will have to opt-out of ${overlappingEventName}.` :
-        (maxEventsSelected ? 'Maximum 3 events can be seleted at a time.' : null), [overlappingEventName, maxEventsSelected])
+    const disableReason = useMemo(() => {
+        if (eventFromSameCategory) {
+            return 'Same category';
+        } else if (overlappingEventName) {
+            return `You have already opted-in for ${overlappingEventName} event for same time slot. 
+            In order to select this event, you will have to opt-out of ${overlappingEventName}.`
+        } else if (maxEventsSelected) {
+            return 'Maximum 3 events can be seleted at a time.'
+        }
+        return null;
+    }, [overlappingEventName, maxEventsSelected, eventFromSameCategory])
+
 
     const anchorId = `event-${event.id}`;
 
@@ -95,3 +105,15 @@ export const EventItem = ({ event, isSelected, toggleSelection }: EventItemProps
         </EventsDetails>
     </EventItemContainer>
 }
+
+export const EventItemMemoized = memo(EventItem, (oldProps, nextProps) => {
+    const oldEvent = oldProps.event;
+    const nextEvent = nextProps.event;
+    if (oldProps.isSelected !== nextProps.isSelected 
+        || oldEvent.maxEventsSelected !== nextEvent.maxEventsSelected 
+        || oldEvent.overlappingEventName !== nextEvent.overlappingEventName 
+        || oldEvent.eventFromSameCategory !== nextEvent.eventFromSameCategory) {
+        return false;
+    }
+    return true;
+})
